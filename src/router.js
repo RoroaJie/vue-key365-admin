@@ -1,15 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+// import Home from './views/Home.vue'
 
+
+//404
+import NOtfound from './views/Notfound.vue'
+//Login
+import Login from './views/Admin/Login.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/*',
+      redirect: {
+        name: 'nontfound',
+        component: NOtfound
+      }
     },
     {
       path: '/about',
